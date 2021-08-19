@@ -2,8 +2,8 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
+[![Build Status](https://travis-ci.com/artificertech/laravel-renderable.svg?token=bByzhPpPyFcdPzCJr5hd&branch=main)](https://travis-ci.com/artificertech/laravel-renderable)
+[![StyleCI](https://github.styleci.io/repos/398035981/shield?branch=main)](https://github.styleci.io/repos/398035981?branch=main)
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
