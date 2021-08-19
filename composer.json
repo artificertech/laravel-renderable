@@ -6,11 +6,13 @@
         {
             "name": "Cole Shirley",
             "email": "cole.shirley@artificertech.com",
-            "homepage": "author homepage"
         }
     ],
     "homepage": "https://github.com/artificertech/laravel-renderable",
-    "keywords": ["Laravel", "LaravelRenderable"],
+    "keywords": [
+        "Laravel",
+        "LaravelRenderable"
+    ],
     "require": {
         "illuminate/support": "~7|~8"
     },
