@@ -37,7 +37,7 @@ class MakeRenderableCommand extends GeneratorCommand
      */
     public function handle()
     {
-        if (parent::handle() === false && !$this->option('force')) {
+        if (parent::handle() === false && ! $this->option('force')) {
             return false;
         }
 
@@ -55,11 +55,11 @@ class MakeRenderableCommand extends GeneratorCommand
             str_replace('.', '/', 'renderable.' . $this->getView()) . '.blade.php'
         );
 
-        if (!$this->files->isDirectory(dirname($path))) {
+        if (! $this->files->isDirectory(dirname($path))) {
             $this->files->makeDirectory(dirname($path), 0777, true, true);
         }
 
-        if ($this->files->exists($path) && !$this->option('force')) {
+        if ($this->files->exists($path) && ! $this->option('force')) {
             $this->error('View already exists!');
 
             return;
