@@ -1,0 +1,41 @@
+{
+    "name": "artificertech/laravel-renderable",
+    "description": "A package for creating classes that can be rendered as components in blade views",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cole Shirley",
+            "email": "cole.shirley@artificertech.com",
+            "homepage": "author homepage"
+        }
+    ],
+    "homepage": "https://github.com/artificertech/laravel-renderable",
+    "keywords": ["Laravel", "LaravelRenderable"],
+    "require": {
+        "illuminate/support": "~7|~8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~5|~6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Artificertech\\LaravelRenderable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Artificertech\\LaravelRenderable\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Artificertech\\LaravelRenderable\\LaravelRenderableServiceProvider"
+            ],
+            "aliases": {
+                "LaravelRenderable": "Artificertech\\LaravelRenderable\\Facades\\LaravelRenderable"
+            }
+        }
+    }
+}
