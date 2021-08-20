@@ -11,6 +11,4 @@ foreach ($__laravel_slots as $key => $value) {
 }
 @endphp
 
-<div>
-    {{ $renderable->render()->with($renderableData) }}
-</div>
+{{ $renderable->render()->with($renderableData) }}
