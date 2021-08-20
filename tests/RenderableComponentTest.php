@@ -3,7 +3,6 @@
 namespace Artificertech\LaravelRenderable\Tests;
 
 use Artificertech\LaravelRenderable\Tests\Stubs\TestRenderable;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 
 class RenderableComponentTest extends TestCase

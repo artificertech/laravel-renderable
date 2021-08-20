@@ -23,7 +23,7 @@ class TestRenderable implements Renderable
 
     /**
      * Defines the variable name that this renderable class
-     * will have when used with the x-renderable blade component
+     * will have when used with the x-renderable blade component.
      *
      * @return string
      */
@@ -33,7 +33,7 @@ class TestRenderable implements Renderable
     }
 
     /**
-     * Get the view that represents the renderable object
+     * Get the view that represents the renderable object.
      *
      * @return \Illuminate\Contracts\View\View
      */
