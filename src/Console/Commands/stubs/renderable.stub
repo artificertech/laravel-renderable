@@ -23,9 +23,9 @@ class DummyClass implements Renderable
      *
      * @return string
      */
-    public function variableName(): string
+    public function renderableName(): string
     {
-        return DummyVariableName;
+        return DummyRenderableName;
     }
 
     /**

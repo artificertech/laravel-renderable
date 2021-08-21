@@ -37,7 +37,7 @@ class MakeRenderableCommand extends GeneratorCommand
      */
     public function handle()
     {
-        if (parent::handle() === false && ! $this->option('force')) {
+        if (parent::handle() === false && !$this->option('force')) {
             return false;
         }
 
@@ -55,11 +55,11 @@ class MakeRenderableCommand extends GeneratorCommand
             str_replace('.', '/', 'renderable.' . $this->getView()) . '.blade.php'
         );
 
-        if (! $this->files->isDirectory(dirname($path))) {
+        if (!$this->files->isDirectory(dirname($path))) {
             $this->files->makeDirectory(dirname($path), 0777, true, true);
         }
 
-        if ($this->files->exists($path) && ! $this->option('force')) {
+        if ($this->files->exists($path) && !$this->option('force')) {
             $this->error('View already exists!');
 
             return;
@@ -67,7 +67,7 @@ class MakeRenderableCommand extends GeneratorCommand
 
         file_put_contents(
             $path,
-            '@props([\'' . $this->qualifyVariableName($this->getNameInput()) . '\'])
+            '@props([\'' . $this->qualifyRenderableName($this->getNameInput()) . '\'])
 <div>
     <!-- ' . Inspiring::quote() . ' -->
 </div>'
@@ -84,11 +84,11 @@ class MakeRenderableCommand extends GeneratorCommand
     {
         return str_replace(
             [
-                'DummyVariableName',
+                'DummyRenderableName',
                 'DummyView',
             ],
             [
-                "'" . $this->qualifyVariableName($this->getNameInput()) . "'",
+                "'" . $this->qualifyRenderableName($this->getNameInput()) . "'",
                 'view(\'renderable.' . $this->getView() . '\')',
             ],
             parent::buildClass($name)
@@ -144,7 +144,7 @@ class MakeRenderableCommand extends GeneratorCommand
         ];
     }
 
-    protected function qualifyVariableName($name)
+    protected function qualifyRenderableName($name)
     {
         return Str::camel($name);
     }

@@ -27,7 +27,7 @@ class TestRenderable implements Renderable
      *
      * @return string
      */
-    public function variableName(): string
+    public function renderableName(): string
     {
         return 'test';
     }

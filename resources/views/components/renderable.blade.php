@@ -1,7 +1,7 @@
 @props(['renderable'])
 
 @php
-$renderableData = array_merge($__data, ['attributes' => $attributes, $renderable->variableName() => $renderable]);
+$renderableData = array_merge($__data, ['attributes' => $attributes, $renderable->renderableName() => $renderable]);
 
 foreach ($__laravel_slots as $key => $value) {
     if ($key == '__default') {
