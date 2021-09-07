@@ -1,7 +1,8 @@
 <?php
 
-namespace Artificertech\LaravelRenderable\Tests;
+namespace Artificertech\LaravelRenderable\Tests\Feature;
 
+use Artificertech\LaravelRenderable\Tests\TestCase;
 use Illuminate\Support\Facades\File;
 
 class MakeRenderableCommandTest extends TestCase

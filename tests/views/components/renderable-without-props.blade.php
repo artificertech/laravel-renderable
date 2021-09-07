@@ -27,3 +27,11 @@ staticAttribute2_is_in_attributes_bag:
 
 dynamicAttribute2_is_in_attributes_bag:
 {{ $attributes->has('dynamicAttribute2') ? 'true' : 'false' }}
+
+classAttribute: {{ $classAttribute ?? '' }}
+
+<div {{ $attributes }}>
+    <div>Extra Slot: {{ $extraSlot }}</div>
+
+    <div>Default Slot: {{ $slot }}</div>
+</div>

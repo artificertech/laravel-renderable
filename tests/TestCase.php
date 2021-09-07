@@ -11,6 +11,7 @@ abstract class TestCase extends BaseTestCase
     {
         return [
             LaravelRenderableServiceProvider::class,
+            TestLaravelRenderableServiceProvider::class,
         ];
     }
 }

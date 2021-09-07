@@ -1,14 +1,24 @@
 @props(['renderable'])
 
 @php
-$renderableData = array_merge($__data, ['attributes' => $attributes, $renderable->renderableName() => $renderable]);
+$attributes = $attributes->merge($renderable->renderableAttributes());
 
-foreach ($__laravel_slots as $key => $value) {
-    if ($key == '__default') {
-        $key = 'slot';
-    }
-    $renderableData[$key] = $value;
+if (property_exists($renderable, 'renderAs')) {
+    $attributes = $attributes->merge([$renderable->renderAs => $renderable]);
 }
 @endphp
 
-{!! $renderable->render()->with($renderableData) !!}
+<x-dynamic-component :component="$renderable->component()" :attributes="$attributes">
+
+    @foreach ($__laravel_slots as $key => $value)
+        @if ($key == '__default')
+            @continue
+        @endif
+
+        <x-slot :name="$key">
+            {{ $value }}
+        </x-slot>
+    @endforeach
+
+    {{ $slot ?? '' }}
+</x-dynamic-component>

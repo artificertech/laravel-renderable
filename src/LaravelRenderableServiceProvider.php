@@ -24,6 +24,14 @@ class LaravelRenderableServiceProvider extends ServiceProvider
         }
     }
 
+    public function register()
+    {
+        // Register the service the package provides.
+        $this->app->singleton('renderable', function ($app) {
+            return new Renderable;
+        });
+    }
+
     /**
      * Console-specific booting.
      *
