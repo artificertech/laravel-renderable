@@ -10,7 +10,7 @@ class RenderableComponent implements Renderable
     use IsRenderable;
 
     /**
-     * The blade component that will be rendered
+     * The blade component that will be rendered.
      *
      * @var string
      */

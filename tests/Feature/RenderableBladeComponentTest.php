@@ -37,7 +37,7 @@ class RenderableBladeComponentTest extends TestCase
             ['renderable' => Renderable::component('laravel-renderable-testing::renderable-with-props')]
         )->assertSeeInOrder([
             '<div>Extra Slot: <div>Extra Slot Content</div></div>',
-            '<div>Default Slot: <div>Default Slot Content</div></div>'
+            '<div>Default Slot: <div>Default Slot Content</div></div>',
         ], false);
     }
 
@@ -49,7 +49,7 @@ class RenderableBladeComponentTest extends TestCase
             ['renderable' => Renderable::component('laravel-renderable-testing::renderable-without-props')]
         )->assertSeeInOrder([
             '<div>Extra Slot: <div>Extra Slot Content</div></div>',
-            '<div>Default Slot: <div>Default Slot Content</div></div>'
+            '<div>Default Slot: <div>Default Slot Content</div></div>',
         ], false);
     }
 
@@ -63,9 +63,9 @@ class RenderableBladeComponentTest extends TestCase
                     'laravel-renderable-testing::renderable-with-props',
                     [
                         'classAttribute' => 'classAttribute',
-                        'classAttribute2' => 'classAttribute2'
+                        'classAttribute2' => 'classAttribute2',
                     ]
-                )
+                ),
             ]
         )->assertSee(
             'classAttribute: classAttribute'
@@ -85,9 +85,9 @@ class RenderableBladeComponentTest extends TestCase
                     'laravel-renderable-testing::renderable-without-props',
                     [
                         'classAttribute' => 'classAttribute',
-                        'classAttribute2' => 'classAttribute2'
+                        'classAttribute2' => 'classAttribute2',
                     ]
-                )
+                ),
             ]
         )->assertSee(
             'classAttribute: classAttribute'
@@ -108,9 +108,9 @@ class RenderableBladeComponentTest extends TestCase
                     [
                         'classAttribute' => 'classAttribute',
                         'classAttribute2' => 'classAttribute2',
-                        'dynamicAttribute2' => "overriden"
+                        'dynamicAttribute2' => 'overriden',
                     ]
-                )
+                ),
             ]
         )->assertSee(
             '<div classAttribute2="classAttribute2" dynamicAttribute2="test" staticAttribute2="test">',
@@ -129,9 +129,9 @@ class RenderableBladeComponentTest extends TestCase
                     [
                         'classAttribute' => 'classAttribute',
                         'classAttribute2' => 'classAttribute2',
-                        'dynamicAttribute2' => "overriden"
+                        'dynamicAttribute2' => 'overriden',
                     ]
-                )
+                ),
             ]
         )->assertSee(
             '<div classAttribute="classAttribute" classAttribute2="classAttribute2" dynamicAttribute2="test" staticAttribute="test" dynamicAttribute="test" staticAttribute2="test">',
@@ -145,7 +145,7 @@ class RenderableBladeComponentTest extends TestCase
         $this->view(
             'laravel-renderable-testing::renderable-container',
             [
-                'renderable' => new TestRenderable('laravel-renderable-testing::renderable-with-render-as-property')
+                'renderable' => new TestRenderable('laravel-renderable-testing::renderable-with-render-as-property'),
             ]
         )->assertDontSee('false');
     }
