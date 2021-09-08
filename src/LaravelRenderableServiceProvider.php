@@ -2,7 +2,6 @@
 
 namespace Artificertech\LaravelRenderable;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelRenderableServiceProvider extends ServiceProvider

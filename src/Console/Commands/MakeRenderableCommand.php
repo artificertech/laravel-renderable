@@ -52,7 +52,7 @@ class MakeRenderableCommand extends GeneratorCommand
     protected function writeView()
     {
         $path = $this->viewPath(
-            str_replace('.', '/', 'renderable.' . $this->getView()) . '.blade.php'
+            str_replace('.', '/', 'components.renderable.' . $this->getView()) . '.blade.php'
         );
 
         if (!$this->files->isDirectory(dirname($path))) {
@@ -68,6 +68,7 @@ class MakeRenderableCommand extends GeneratorCommand
         file_put_contents(
             $path,
             '@props([\'' . $this->qualifyRenderableName($this->getNameInput()) . '\'])
+
 <div>
     <!-- ' . Inspiring::quote() . ' -->
 </div>'
@@ -85,11 +86,11 @@ class MakeRenderableCommand extends GeneratorCommand
         return str_replace(
             [
                 'DummyRenderableName',
-                'DummyView',
+                'DummyComponent',
             ],
             [
                 "'" . $this->qualifyRenderableName($this->getNameInput()) . "'",
-                'view(\'renderable.' . $this->getView() . '\')',
+                '\'renderable.' . $this->getView() . '\'',
             ],
             parent::buildClass($name)
         );

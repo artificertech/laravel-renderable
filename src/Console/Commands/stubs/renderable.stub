@@ -2,39 +2,24 @@
 
 namespace DummyNamespace;
 
-use Artificertech\LaravelRenderable\Renderable;
-use Illuminate\Contracts\View\View;
+use Artificertech\LaravelRenderable\Concerns\IsRenderable;
+use Artificertech\LaravelRenderable\Contracts\Renderable;
 
 class DummyClass implements Renderable
 {
-    /**
-     * Create a new renderable instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+    use IsRenderable;
 
     /**
-     * Defines the variable name that this renderable class
-     * will have when used with the x-renderable blade component.
+     * Variable name this object will have in the rendered component
      *
-     * @return string
+     * @var string
      */
-    public function renderableName(): string
-    {
-        return DummyRenderableName;
-    }
+    public string $renderAs = DummyRenderableName;
 
     /**
-     * Get the view that represents the renderable object.
+     * The blade component that will be rendered.
      *
-     * @return \Illuminate\Contracts\View\View
+     * @var string
      */
-    public function render(): View
-    {
-        return DummyView;
-    }
+    public string $component = DummyComponent;
 }

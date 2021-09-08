@@ -3,7 +3,7 @@
 @php
 $attributes = $attributes->merge($renderable->renderableAttributes());
 
-if (property_exists($renderable, 'renderAs')) {
+if (!empty($renderable->renderAs)) {
     $attributes = $attributes->merge([$renderable->renderAs => $renderable]);
 }
 @endphp
