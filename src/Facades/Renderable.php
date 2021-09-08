@@ -4,6 +4,11 @@ namespace Artificertech\LaravelRenderable\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @method static Artificertech\LaravelRenderable\RenderableComponent component(String $callback, array $attributes = []) Create a new Renderable component
+ *
+ * @see Artificertech\LaravelRenderable\Renderable
+ */
 class Renderable extends Facade
 {
     /**

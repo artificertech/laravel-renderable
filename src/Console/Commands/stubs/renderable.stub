@@ -10,7 +10,7 @@ class DummyClass implements Renderable
     use IsRenderable;
 
     /**
-     * Variable name this object will have in the rendered component
+     * Variable name this object will have in the rendered component.
      *
      * @var string
      */
@@ -22,4 +22,12 @@ class DummyClass implements Renderable
      * @var string
      */
     public string $component = DummyComponent;
+
+    /**
+     * Create a new instance of this Renderable.
+     */
+    public function __construct()
+    {
+        // Your content here
+    }
 }

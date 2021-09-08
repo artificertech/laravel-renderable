@@ -47,7 +47,7 @@ trait IsRenderable
     }
 
     /**
-     * Get the blade component that will be used for this object
+     * Get the blade component that will be used for this object.
      *
      * @return string
      */
@@ -57,7 +57,7 @@ trait IsRenderable
     }
 
     /**
-     * Get the attributes that will be passed to the blade component
+     * Get the attributes that will be passed to the blade component.
      *
      * @return array
      */
