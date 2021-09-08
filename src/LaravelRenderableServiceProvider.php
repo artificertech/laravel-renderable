@@ -16,8 +16,6 @@ class LaravelRenderableServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-renderable');
 
-        Blade::component('laravel-renderable::components.renderable', 'renderable');
-
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
@@ -30,6 +28,8 @@ class LaravelRenderableServiceProvider extends ServiceProvider
         $this->app->singleton('renderable', function ($app) {
             return new Renderable;
         });
+
+        $this->registerTagCompiler();
     }
 
     /**
@@ -41,5 +41,14 @@ class LaravelRenderableServiceProvider extends ServiceProvider
     {
         // Registering package commands.
         $this->commands([\Artificertech\LaravelRenderable\Console\Commands\MakeRenderableCommand::class]);
+    }
+
+    protected function registerTagCompiler()
+    {
+        if (method_exists($this->app['blade.compiler'], 'precompiler')) {
+            $this->app['blade.compiler']->precompiler(function ($string) {
+                return app(RenderableTagCompiler::class, ['aliases' => ['renderable' => 'laravel-renderable::components.renderable']])->compile($string);
+            });
+        }
     }
 }
