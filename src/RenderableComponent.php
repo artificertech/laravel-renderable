@@ -19,8 +19,8 @@ class RenderableComponent implements Renderable
     /**
      * Create a new Renderable component.
      *
-     * @param string $component the blade component string.
-     * @param array $attributes the attributes that will be passed to the blade component.
+     * @param  string  $component  the blade component string.
+     * @param  array  $attributes  the attributes that will be passed to the blade component.
      */
     public function __construct(string $component, $attributes = [])
     {
